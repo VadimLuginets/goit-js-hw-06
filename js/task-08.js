@@ -1,4 +1,5 @@
 const loginForm = document.querySelector(".login-form");
+const form = {};
 loginForm.addEventListener("submit", (event) => {
   event.preventDefault();
   const formElements = event.currentTarget.elements;
@@ -10,6 +11,8 @@ loginForm.addEventListener("submit", (event) => {
   if (password.length === 0) {
     alert("All fields must be filed");
   }
-  console.log(mail);
-  console.log(password);
+  form.mail = mail;
+  form.password = password;
+  event.currentTarget.reset();
+  console.log(form);
 });
